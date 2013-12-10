@@ -142,7 +142,7 @@ function socketConnect(worker, workerid, socketid, ip) {
 	Dnsbl.query(connection.ip, function(isBlocked) {
 		if (isBlocked) {
 			connection.popup("Your IP is known for abuse and has been locked. If you're using a proxy, don't.");
-			if (connection.user) connection.user.lock(true);
+			if (connection.user) connection.user.lock(false);
 		}
 	});
 }
